@@ -1,0 +1,12 @@
+@use "../../presets/variables" as *;
+@use "../../presets/skin" as *;
+@use "../../mixins/mixins" as *;
+@use "../../mixins/mixins-media" as *;
+@use "../../mixins/extends" as *;
+
+.header-overlay {
+	@include abs-position;
+	z-index: 1;
+	background-color: $color-primary;
+	opacity: 0.8;
+}

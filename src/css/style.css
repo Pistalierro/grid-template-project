@@ -9194,6 +9194,13 @@ template {
   src: url(../webfonts/fa-v4compatibility.woff2) format("woff2"), url(../webfonts/fa-v4compatibility.ttf) format("truetype");
   unicode-range: u+f041, u+f047, u+f065-f066, u+f07d-f07e, u+f080, u+f08b, u+f08e, u+f090, u+f09a, u+f0ac, u+f0ae, u+f0b2, u+f0d0, u+f0d6, u+f0e4, u+f0ec, u+f10a-f10b, u+f123, u+f13e, u+f148-f149, u+f14c, u+f156, u+f15e, u+f160-f161, u+f163, u+f175-f178, u+f195, u+f1f8, u+f219, u+f27a;
 }
+.header-content__container,
+.header-menu__container {
+  width: min(100% - 40px, 1300px);
+
+  margin-inline: auto;
+}
+
 *::before,
 *::after,
 * {
@@ -9201,9 +9208,21 @@ template {
           box-sizing: border-box;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+}
+
+h1 {
+  letter-spacing: 0.09em;
+
+  font-family: "Roboto Slab", serif;
+  font-size: 3.75rem;
+  font-weight: 300;
 }
 
 a {
@@ -9212,6 +9231,146 @@ a {
   color: #ffffff;
 }
 
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
+  width: 250px;
+  height: 60px;
+  padding: 0.5em 1em;
+
+  border: 2px solid #ffffff;
+}
+
+.header {
+  position: relative;
+
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+
+  min-height: 100vh;
+
+  color: #ffffff;
+  background-color: #2d3651;
+  background-image: url(../assets/img/img-header.png);
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.header-menu {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  padding: 20px 0;
+}
+.header-menu__container {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+
+  gap: 20px;
+  grid-template-columns: auto 1fr;
+}
+
+.header-logo__link {
+  display: block;
+
+  letter-spacing: 0.22em;
+
+  font-size: 1.5rem;
+}
+.header-logo__accent {
+  display: inline-block;
+
+  margin-right: 4px;
+  padding: 14px 1px 13px 5px;
+
+  border: 3px solid #d53d27;
+}
+
+.header-overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  opacity: 0.8;
+  background-color: #2d3651;
+}
+
+.header-navbar__btn {
+  display: none;
+}
+.header-navbar__list {
+  display: grid;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+
+  margin: 0 -10px 0 0;
+  padding: 0;
+
+  list-style: none;
+
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(40px, -webkit-max-content));
+  grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
+}
+.header-navbar__link {
+  display: block;
+
+  padding: 20px 10px;
+
+  -webkit-transition: color 0.3s;
+
+  transition: color 0.3s;
+  letter-spacing: 0.09em;
+
+  font-size: 1.125rem;
+}
+.header-navbar__link:hover,
+.header-navbar__link:focus {
+  color: #d66926;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+.header-content__container {
+  display: grid;
+}
+.header-content__title {
+  margin: 0 0 53px 0;
+
+  text-align: center;
+}
+.header-content__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
+  width: 100%;
+
+  gap: 20px;
+}
 @media (prefers-reduced-motion: reduce) {
   .fa-beat,
   .fa-beat-fade,

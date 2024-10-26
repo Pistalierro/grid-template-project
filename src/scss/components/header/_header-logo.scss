@@ -1,0 +1,22 @@
+@use "../../presets/variables" as *;
+@use "../../presets/skin" as *;
+@use "../../mixins/mixins" as *;
+@use "../../mixins/mixins-media" as *;
+@use "../../mixins/extends" as *;
+
+.header-logo {
+
+
+	&__link {
+		display: block;
+		font-size: 1.5rem;
+		letter-spacing: 0.22em;
+	}
+
+	&__accent {
+		display: inline-block;
+		border: 3px solid $color-highlight;
+		padding: 14px 1px 13px 5px;
+		margin-right: 4px;
+	}
+}

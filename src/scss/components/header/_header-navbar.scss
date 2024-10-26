@@ -1,0 +1,32 @@
+@use "../../presets/variables" as *;
+@use "../../presets/skin" as *;
+@use "../../mixins/mixins" as *;
+@use "../../mixins/mixins-media" as *;
+@use "../../mixins/extends" as *;
+
+.header-navbar {
+	&__btn {
+		display: none;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax($gap-x2, max-content));
+		gap: $gap;
+		justify-content: end;
+		@include unlist(0 (-$gap-sm) 0 0)
+	}
+
+	&__link {
+		display: block;
+		padding: $gap $gap-sm;
+		font-size: 1.125rem;
+		transition: color 0.3s;
+		letter-spacing: 0.09em;
+
+		&:hover,
+		&:focus {
+			color: $color-accent;
+		}
+	}
+}

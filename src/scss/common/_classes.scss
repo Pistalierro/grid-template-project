@@ -4,4 +4,12 @@
 @use "../mixins/mixins-media" as *;
 @use "../mixins/extends" as *;
 
-
+.btn {
+	display: flex;
+	padding: 0.5em 1em;
+	border: 2px solid $color-light;
+	width: 250px;
+	height: $gap-x3;
+	align-items: center;
+	justify-content: center;
+}
