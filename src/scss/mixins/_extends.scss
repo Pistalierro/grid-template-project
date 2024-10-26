@@ -2,5 +2,11 @@
 @use "../presets/variables" as *;
 
 %text-shadow {
-  text-shadow: 0 0 5px $color-black, 0 0 15px $color-black, 0 0 30px $color-black;
+	text-shadow: 0 0 5px $color-black, 0 0 15px $color-black, 0 0 30px $color-black;
+}
+
+%container {
+	max-width: $container-size;
+	margin: 0 auto;
+	padding: 0 $gap;
 }
