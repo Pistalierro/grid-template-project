@@ -6,7 +6,7 @@
 
 .subscribe {
 	background-color: $color-primary;
-	padding: $gap-lg;
+	padding: $gap-lg 0;
 
 	&__container {
 		@extend %container;
@@ -14,8 +14,14 @@
 
 	&__form {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
 		gap: $gap;
+
+		@include sm-min {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@include sm-xs {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
 	&__item {
@@ -31,8 +37,11 @@
 
 			&::placeholder {
 				color: $color-gray;
-				font-size: 1.25rem;
 				letter-spacing: 0.1em;
+
+				@include md-min {
+					font-size: 1.25rem;
+				}
 			}
 
 			&:hover,
@@ -53,7 +62,6 @@
 			background-color: rgba($color-light, 0.05);
 			border: 2px solid transparent;
 			border-bottom-color: rgba($color-light, 0.2);
-			font-size: 1.25rem;
 			color: $color-light;
 			letter-spacing: 0.1em;
 			transition: border-color 0.3s, background-color 0.3s;
@@ -62,6 +70,16 @@
 			&:focus {
 				border-color: $color-light;
 				background-color: $color-accent;
+			}
+
+			@include md-min {
+				font-size: 1.25rem;
+			}
+		}
+
+		@include sm-xs {
+			&:first-of-type {
+				grid-column: 1/span 2;
 			}
 		}
 	}
