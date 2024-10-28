@@ -20,10 +20,20 @@ body {
 }
 
 h1 {
-	font-size: 3.75rem;
 	font-family: $font-header;
 	font-weight: 300;
 	letter-spacing: 0.09em;
+	line-height: 1.2;
+
+	@include md-min {
+		font-size: 3.75rem;
+	}
+	@include md-sm {
+		font-size: 2.5rem;
+	}
+	@include sm {
+		font-size: 1.875rem;
+	}
 }
 
 a {

@@ -12,6 +12,11 @@
 	width: 100%;
 	padding: $gap 0;
 
+	@include sm {
+		background-color: rgba($color-gray-dark, 0.25);
+		@include box-shadow
+	}
+
 	&__container {
 		@extend %container;
 		display: grid;

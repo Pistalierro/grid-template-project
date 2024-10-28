@@ -14,14 +14,28 @@
 	}
 
 	&__title {
-		margin: 0 0 53px 0;
 		text-align: center;
+		letter-spacing: 0.078em;
+
+		@include md-min {
+			margin: 0 0 53px 0;
+		}
+		@include md-sm {
+			margin: 0 0 43px 0;
+		}
+		@include sm {
+			margin: 0 0 33px 0;
+		}
 	}
 
 	&__actions {
-		width: 100%;
 		display: flex;
 		justify-content: center;
 		gap: $gap;
+
+		@include xs {
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 }

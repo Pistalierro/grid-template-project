@@ -8,8 +8,37 @@
 	display: flex;
 	padding: 0.5em 1em;
 	border: 2px solid $color-light;
-	width: 250px;
-	height: $gap-x3;
 	align-items: center;
 	justify-content: center;
+	letter-spacing: 0.1em;
+
+	&--light {
+		background-color: rgba($color-light, 0.1);
+		transition: background-color 0.3s;
+
+		@include md-min {
+			min-height: $gap-x3;
+			min-width: 250px;
+			font-size: 1.125rem;
+		}
+
+		@include md-sm {
+			min-height: calc($gap-x5 / 2);
+			min-width: $gap-x5 * 2;
+		}
+		@include sm {
+			min-width: 170px;
+			min-height: $gap-x2;
+		}
+
+		&:hover,
+		&:focus {
+			background-color: $color-accent;
+		}
+	}
+
+	&--primary {
+		font-size: 1.125rem;
+		min-height: $gap-x3;
+	}
 }

@@ -5,24 +5,100 @@
 @use "../../mixins/extends" as *;
 
 .header-navbar {
+
 	&__btn {
-		display: none;
+
+		position: relative;
+		width: $gap-lg;
+		height: 30px;
+		margin-left: auto;
+		transform: rotate(0deg);
+		transition: .5s ease-in-out;
+		cursor: pointer;
+
+		&-row {
+			display: block;
+			position: absolute;
+			height: 3px;
+			width: 100%;
+			background: $color-light;
+			border-radius: 4px;
+			opacity: 1;
+			left: 0;
+			transform: rotate(0deg);
+			transition: .25s ease-in-out;
+
+			&:nth-child(1) {
+				top: 0;
+			}
+
+			&:nth-child(2) {
+				top: $gap-sm;
+			}
+
+			&:nth-child(3) {
+				top: $gap;
+			}
+		}
+
+		&.active span {
+			&:nth-child(1) {
+				top: 9px;
+				transform: rotate(135deg);
+			}
+
+			&:nth-child(2) {
+				opacity: 0;
+				left: -$gap-lg;
+			}
+
+			&:nth-child(3) {
+				top: 9px;
+				transform: rotate(-135deg);
+			}
+		}
+
+		@include sm-min {
+			display: none;
+		}
 	}
 
+
 	&__list {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax($gap-x2, max-content));
-		gap: $gap;
-		justify-content: end;
-		@include unlist(0 (-$gap-sm) 0 0)
+
+		@include sm {
+			display: none;
+			position: absolute;
+			top: 100%;
+			right: $gap;
+			background-color: rgba($color-gray, 0.45);
+			@include unlist(0 (-$gap) 0 0);
+			text-align: right;
+		}
+
+		@include sm-min {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax($gap-x2, max-content));
+			gap: $gap;
+			justify-content: end;
+			@include unlist(0 (-$gap-sm) 0 0);
+		}
 	}
 
 	&__link {
 		display: block;
-		padding: $gap $gap-sm;
 		font-size: 1.125rem;
 		transition: color 0.3s;
 		letter-spacing: 0.09em;
+
+		@include sm-min {
+			padding: $gap $gap-sm;
+		}
+
+		@include sm {
+			padding: $gap-sm $gap;
+			margin: $gap $gap-sm;
+		}
 
 		&:hover,
 		&:focus {
