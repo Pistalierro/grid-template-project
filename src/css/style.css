@@ -9194,6 +9194,7 @@ template {
   src: url(../webfonts/fa-v4compatibility.woff2) format("woff2"), url(../webfonts/fa-v4compatibility.ttf) format("truetype");
   unicode-range: u+f041, u+f047, u+f065-f066, u+f07d-f07e, u+f080, u+f08b, u+f08e, u+f090, u+f09a, u+f0ac, u+f0ae, u+f0b2, u+f0d0, u+f0d6, u+f0e4, u+f0ec, u+f10a-f10b, u+f123, u+f13e, u+f148-f149, u+f14c, u+f156, u+f15e, u+f160-f161, u+f163, u+f175-f178, u+f195, u+f1f8, u+f219, u+f27a;
 }
+.about__container,
 .header-content__container,
 .header-menu__container {
   width: min(100% - 40px, 1300px);
@@ -9213,6 +9214,8 @@ html {
 }
 
 body {
+  color: #637588;
+
   font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
@@ -9222,6 +9225,18 @@ h1 {
 
   font-family: "Roboto Slab", serif;
   font-weight: 300;
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 0 0 3rem;
+
+  letter-spacing: 0.1em;
+
+  color: #2d3651;
+
+  font-family: "Roboto Slab", serif;
+  font-size: 2.5rem;
   line-height: 1.2;
 }
 
@@ -9580,6 +9595,46 @@ a {
   grid-area: a9;
 }
 
+.about {
+  padding: 100px 0;
+
+  background-color: #e5e5e5;
+}
+.about__container {
+  display: grid;
+
+  gap: 100px;
+  grid-template-columns: 1fr 271px;
+}
+.about__description {
+  position: relative;
+}
+.about__description::before {
+  position: absolute;
+  top: 5px;
+  right: calc(-100px / 2);
+
+  width: 2px;
+  height: 55%;
+  min-height: 200px;
+
+  content: "";
+
+  background-color: rgba(99, 117, 136, 0.1);
+}
+.about__description p {
+  position: relative;
+
+  font-size: 1.25rem;
+  line-height: 1.333333em;
+}
+.about__picture {
+  text-align: center;
+}
+.about__image {
+  max-width: 100%;
+  min-height: 30rem;
+}
 @media (min-width: 576px) {
   .btn--primary {
     min-width: 350px;
@@ -9592,7 +9647,6 @@ a {
     gap: 10px;
   }
 }
-
 @media (min-width: 768px) {
   .header-navbar__btn {
     display: none;
@@ -9619,7 +9673,6 @@ a {
     font-size: 1.25rem;
   }
 }
-
 @media (min-width: 992px) {
   h1 {
     font-size: 3.75rem;
@@ -9638,7 +9691,6 @@ a {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-
 @media (max-width: 991.8px) and (min-width: 768px) {
   h1 {
     font-size: 2.5rem;
@@ -9655,7 +9707,6 @@ a {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 @media (max-width: 767.8px) {
   h1 {
     font-size: 1.875rem;
@@ -9696,14 +9747,12 @@ a {
     font-size: 1.125rem;
   }
 }
-
 @media (max-width: 767.8px) and (min-width: 576px) {
   .skills__container {
     grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (max-width: 575.8px) {
   .btn--primary {
     width: 100%;
@@ -9725,7 +9774,6 @@ a {
     grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .fa-beat,
   .fa-beat-fade,

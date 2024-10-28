@@ -17,6 +17,7 @@ html {
 body {
 	font-family: $font-main;
 	font-size: $font-size;
+	color: $color-gray;
 }
 
 h1 {
@@ -34,6 +35,15 @@ h1 {
 	@include sm {
 		font-size: 1.875rem;
 	}
+}
+
+h2 {
+	color: $color-primary;
+	font-family: $font-header;
+	margin: 0 0 3rem;
+	font-size: 2.5rem;
+	letter-spacing: 0.1em;
+	line-height: 1.2;
 }
 
 a {

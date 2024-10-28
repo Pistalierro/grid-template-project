@@ -1,0 +1,47 @@
+@use "../../presets/variables" as *;
+@use "../../presets/skin" as *;
+@use "../../mixins/mixins" as *;
+@use "../../mixins/mixins-media" as *;
+@use "../../mixins/extends" as *;
+
+.about {
+	padding: $gap-x5 0;
+	background-color: $color-gray-light;
+
+	&__container {
+		@extend %container;
+		display: grid;
+		grid-template-columns: 1fr 271px;
+		gap: $gap-x5;
+	}
+
+	&__description {
+		position: relative;
+
+		&::before {
+			position: absolute;
+			top: calc($gap-sm / 2);
+			right: calc(-#{$gap-x5} / 2);
+			height: 55%;
+			min-height: $gap-x5 * 2;
+			width: 2px;
+			content: "";
+			background-color: rgba($color-gray, 0.1);
+		}
+
+		p {
+			font-size: 1.25rem;
+			line-height: 1.333333em;
+			position: relative;
+		}
+	}
+
+	&__picture {
+		text-align: center;
+	}
+
+	&__image {
+		max-width: 100%;
+		min-height: 30rem;
+	}
+}
