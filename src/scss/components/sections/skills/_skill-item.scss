@@ -1,0 +1,70 @@
+@use "../../../presets/variables" as *;
+@use "../../../presets/skin" as *;
+@use "../../../mixins/mixins" as *;
+@use "../../../mixins/mixins-media" as *;
+@use "../../../mixins/extends" as *;
+
+.skills-item {
+	position: relative;
+	background-color: $color-primary;
+	overflow: hidden;
+
+	&__title {
+		margin: 0;
+		letter-spacing: 0.1em;
+
+		@include sm-min {
+			font-size: 1.25rem;
+		}
+
+		@include sm {
+			font-size: 1.125rem;
+		}
+	}
+
+	&__link {
+		display: flex;
+		padding: $gap;
+		@include abs-position;
+		align-items: center;
+		justify-content: center;
+		z-index: 2;
+		transition: color 0.3s;
+	}
+
+	&__image {
+		@include abs-position;
+		z-index: 1;
+		background-position: 50% 50%;
+		background-size: cover;
+		transition: transform 0.3s;
+	}
+
+	&__overlay {
+		@include abs-position;
+		opacity: 0.8;
+		z-index: 1;
+		transition: opacity 0.3s;
+	}
+
+	&:hover,
+	&:focus {
+		a {
+			color: $color-accent;
+		}
+
+		.skills-item__image {
+			transform: scale(1.1);
+		}
+
+		.skills-item__overlay {
+			opacity: 0.95;
+		}
+	}
+}
+
+@for $i from 1 through 9 {
+	.skills-item:nth-of-type(#{$i}) {
+		grid-area: a#{$i};
+	}
+}

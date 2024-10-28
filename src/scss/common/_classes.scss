@@ -40,5 +40,21 @@
 	&--primary {
 		font-size: 1.125rem;
 		min-height: $gap-x3;
+		border: 2px solid $color-primary;
+		transition: background-color 0.3s;
+
+		&:hover,
+		&:focus {
+			background-color: $color-accent;
+		}
+
+		background-color: rgba($color-primary, 0.8);
+
+		@include xs-min {
+			min-width: 350px;
+		}
+		@include xs {
+			width: 100%;
+		}
 	}
 }
