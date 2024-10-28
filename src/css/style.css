@@ -9229,14 +9229,11 @@ h1 {
 }
 
 h2 {
-  margin: 0 0 3rem;
-
   letter-spacing: 0.1em;
 
   color: #2d3651;
 
   font-family: "Roboto Slab", serif;
-  font-size: 2.5rem;
   line-height: 1.2;
 }
 
@@ -9596,15 +9593,10 @@ a {
 }
 
 .about {
-  padding: 100px 0;
-
   background-color: #e5e5e5;
 }
 .about__container {
   display: grid;
-
-  gap: 100px;
-  grid-template-columns: 1fr 271px;
 }
 .about__description {
   position: relative;
@@ -9612,7 +9604,6 @@ a {
 .about__description::before {
   position: absolute;
   top: 5px;
-  right: calc(-100px / 2);
 
   width: 2px;
   height: 55%;
@@ -9625,7 +9616,6 @@ a {
 .about__description p {
   position: relative;
 
-  font-size: 1.25rem;
   line-height: 1.333333em;
 }
 .about__picture {
@@ -9633,7 +9623,7 @@ a {
 }
 .about__image {
   max-width: 100%;
-  min-height: 30rem;
+  max-height: 30rem;
 }
 @media (min-width: 576px) {
   .btn--primary {
@@ -9672,10 +9662,18 @@ a {
   .skills-item__title {
     font-size: 1.25rem;
   }
+  .about__description p {
+    font-size: 1.25rem;
+  }
 }
 @media (min-width: 992px) {
   h1 {
     font-size: 3.75rem;
+  }
+  h2 {
+    margin: 0 0 3rem;
+
+    font-size: 2.5rem;
   }
   .btn--light {
     min-width: 250px;
@@ -9690,10 +9688,25 @@ a {
     grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" " a7 a8 a9 a6";
     grid-template-columns: repeat(4, 1fr);
   }
+  .about__container {
+    gap: 100px;
+    grid-template-columns: 1fr 271px;
+  }
+  .about__description::before {
+    right: calc(-100px / 2);
+  }
+  .about {
+    padding: 100px 0;
+  }
 }
 @media (max-width: 991.8px) and (min-width: 768px) {
   h1 {
     font-size: 2.5rem;
+  }
+  h2 {
+    margin: 0 0 2.5rem;
+
+    font-size: 2rem;
   }
   .btn--light {
     min-width: 200px;
@@ -9706,10 +9719,25 @@ a {
     grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
     grid-template-columns: repeat(3, 1fr);
   }
+  .about__container {
+    gap: 60px;
+    grid-template-columns: 1fr 255px;
+  }
+  .about__description::before {
+    right: -30px;
+  }
+  .about {
+    padding: 80px 0;
+  }
 }
 @media (max-width: 767.8px) {
   h1 {
     font-size: 1.875rem;
+  }
+  h2 {
+    margin: 0 0 2rem;
+
+    font-size: 1.5rem;
   }
   .btn--light {
     min-width: 170px;
@@ -9745,6 +9773,12 @@ a {
   }
   .skills-item__title {
     font-size: 1.125rem;
+  }
+  .about__container {
+    gap: 40px;
+  }
+  .about {
+    padding: 60px 0;
   }
 }
 @media (max-width: 767.8px) and (min-width: 576px) {

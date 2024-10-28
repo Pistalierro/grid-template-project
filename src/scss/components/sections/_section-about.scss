@@ -5,14 +5,23 @@
 @use "../../mixins/extends" as *;
 
 .about {
-	padding: $gap-x5 0;
 	background-color: $color-gray-light;
 
 	&__container {
 		@extend %container;
 		display: grid;
-		grid-template-columns: 1fr 271px;
-		gap: $gap-x5;
+
+		@include md-min {
+			grid-template-columns: 1fr 271px;
+			gap: $gap-x5;
+		}
+		@include md-sm {
+			grid-template-columns: 1fr 255px;
+			gap: $gap-x3;
+		}
+		@include sm {
+			gap: $gap-x2;
+		}
 	}
 
 	&__description {
@@ -21,18 +30,27 @@
 		&::before {
 			position: absolute;
 			top: calc($gap-sm / 2);
-			right: calc(-#{$gap-x5} / 2);
 			height: 55%;
 			min-height: $gap-x5 * 2;
 			width: 2px;
 			content: "";
 			background-color: rgba($color-gray, 0.1);
+
+			@include md-min {
+				right: calc(-#{$gap-x5} / 2);
+			}
+
+			@include md-sm {
+				right: -$gap-lg;
+			}
 		}
 
 		p {
-			font-size: 1.25rem;
 			line-height: 1.333333em;
 			position: relative;
+			@include sm-min {
+				font-size: 1.25rem;
+			}
 		}
 	}
 
@@ -42,6 +60,17 @@
 
 	&__image {
 		max-width: 100%;
-		min-height: 30rem;
+		max-height: 30rem;
+	}
+
+	@include md-min {
+		padding: $gap-x5 0;
+	}
+
+	@include md-sm {
+		padding: $gap-x4 0;
+	}
+	@include sm {
+		padding: $gap-x3 0;
 	}
 }
