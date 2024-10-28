@@ -4,16 +4,16 @@
 @use "../../mixins/mixins-media" as *;
 @use "../../mixins/extends" as *;
 
-.header-content {
+.header__content {
 	position: relative;
 	z-index: 2;
 
-	&__container {
+	&-container {
 		@extend %container;
 		display: grid;
 	}
 
-	&__title {
+	&-title {
 		text-align: center;
 		letter-spacing: 0.078em;
 
@@ -28,7 +28,7 @@
 		}
 	}
 
-	&__actions {
+	&-actions {
 		display: flex;
 		justify-content: center;
 		gap: $gap;

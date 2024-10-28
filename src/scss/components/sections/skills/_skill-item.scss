@@ -4,12 +4,12 @@
 @use "../../../mixins/mixins-media" as *;
 @use "../../../mixins/extends" as *;
 
-.skills-item {
+.skills__item {
 	position: relative;
 	background-color: $color-primary;
 	overflow: hidden;
 
-	&__title {
+	&-title {
 		margin: 0;
 		letter-spacing: 0.1em;
 
@@ -22,7 +22,7 @@
 		}
 	}
 
-	&__link {
+	&-link {
 		display: flex;
 		padding: $gap;
 		@include abs-position;
@@ -32,7 +32,7 @@
 		transition: color 0.3s;
 	}
 
-	&__image {
+	&-image {
 		@include abs-position;
 		z-index: 1;
 		background-position: 50% 50%;
@@ -40,7 +40,7 @@
 		transition: transform 0.3s;
 	}
 
-	&__overlay {
+	&-overlay {
 		@include abs-position;
 		opacity: 0.8;
 		z-index: 1;
@@ -53,18 +53,18 @@
 			color: $color-accent;
 		}
 
-		.skills-item__image {
+		.skills__item-image {
 			transform: scale(1.1);
 		}
 
-		.skills-item__overlay {
+		.skills__item-overlay {
 			opacity: 0.95;
 		}
 	}
 }
 
 @for $i from 1 through 9 {
-	.skills-item:nth-of-type(#{$i}) {
+	.skills__item:nth-of-type(#{$i}) {
 		grid-area: a#{$i};
 	}
 }

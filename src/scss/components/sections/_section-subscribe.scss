@@ -1,0 +1,70 @@
+@use "../../presets/variables" as *;
+@use "../../presets/skin" as *;
+@use "../../mixins/mixins" as *;
+@use "../../mixins/mixins-media" as *;
+@use "../../mixins/extends" as *;
+
+.subscribe {
+	background-color: $color-primary;
+	padding: $gap-lg;
+
+	&__container {
+		@extend %container;
+	}
+
+	&__form {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: $gap;
+	}
+
+	&__item {
+		&-control {
+			display: block;
+			width: 100%;
+			padding: 0 $gap-lg;
+			height: $gap-x3;
+			background-color: rgba($color-light, 0.05);
+			border: 2px solid transparent;
+			border-bottom-color: rgba($color-light, 0.2);
+			transition: border-color 0.3s, background-color 0.3s;
+
+			&::placeholder {
+				color: $color-gray;
+				font-size: 1.25rem;
+				letter-spacing: 0.1em;
+			}
+
+			&:hover,
+			&:focus {
+				border-color: $color-light;
+				background-color: rgba($color-light, 0.1);
+
+				&::placeholder {
+					color: rgba($color-gray-light, 0.55);
+				}
+			}
+		}
+
+		&-btn {
+			width: 100%;
+			padding: 0 $gap-lg;
+			height: $gap-x3;
+			background-color: rgba($color-light, 0.05);
+			border: 2px solid transparent;
+			border-bottom-color: rgba($color-light, 0.2);
+			font-size: 1.25rem;
+			color: $color-light;
+			letter-spacing: 0.1em;
+			transition: border-color 0.3s, background-color 0.3s;
+
+			&:hover,
+			&:focus {
+				border-color: $color-light;
+				background-color: $color-accent;
+			}
+		}
+	}
+
+
+}

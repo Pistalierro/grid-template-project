@@ -4,7 +4,7 @@
 @use "../../mixins/mixins-media" as *;
 @use "../../mixins/extends" as *;
 
-.header-menu {
+.header__menu {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -17,7 +17,7 @@
 		@include box-shadow
 	}
 
-	&__container {
+	&-container {
 		@extend %container;
 		display: grid;
 		grid-template-columns: auto 1fr;

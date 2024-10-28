@@ -4,7 +4,7 @@
 @use "../../mixins/mixins-media" as *;
 @use "../../mixins/extends" as *;
 
-.header-overlay {
+.header__overlay {
 	@include abs-position;
 	z-index: 1;
 	background-color: $color-primary;
