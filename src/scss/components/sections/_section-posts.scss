@@ -1,0 +1,101 @@
+@use "../../presets/variables" as *;
+@use "../../presets/skin" as *;
+@use "../../mixins/mixins" as *;
+@use "../../mixins/mixins-media" as *;
+@use "../../mixins/extends" as *;
+
+.posts {
+	padding: $gap-x5 0;
+
+	&__container {
+		@extend %container;
+	}
+
+	&__grid {
+		display: grid;
+		gap: $gap;
+		margin-bottom: $gap;
+
+		@include md-min {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+		}
+		@include md-sm {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+		}
+		@include sm-xs {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+		}
+
+		@include xs {
+			grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+		}
+
+	}
+
+	&__actions {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.post-item {
+	background-color: rgba($color-gray-light, 0.6);
+	transition: background-color 0.3s;
+
+	&__link {
+		color: $color-gray;
+	}
+
+	&__picture {
+		height: $gap-x5 * 3;
+		overflow: hidden;
+		display: flex;
+	}
+
+	&__image {
+		display: block;
+		width: 100%;
+		object-fit: cover;
+		transition: transform .3s;
+	}
+
+	&__content {
+		padding: $gap-lg $gap;
+		text-align: center;
+		line-height: 1.25;
+	}
+
+	&__title {
+		color: $color-gray;
+		transition: color 0.3s;
+	}
+
+	&__description {
+		color: $color-gray;
+		transition: color 0.3s;
+	}
+
+	&:hover,
+	&:focus {
+
+		background-color: $color-gray-light;
+
+		img {
+			transform: scale(1.1);
+		}
+
+		h3,
+		p {
+			color: $color-primary;
+		}
+	}
+}
+
+@for $i from 1 through 6 {
+	.post-item:nth-of-type(#{$i}) {
+		grid-area: p#{$i};
+	}
+}

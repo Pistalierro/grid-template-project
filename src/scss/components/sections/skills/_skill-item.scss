@@ -25,6 +25,7 @@
 	&-link {
 		display: flex;
 		padding: $gap;
+		font-family: $font-main;
 		@include abs-position;
 		align-items: center;
 		justify-content: center;

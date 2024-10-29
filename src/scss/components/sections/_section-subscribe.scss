@@ -1,6 +1,5 @@
 @use "../../presets/variables" as *;
 @use "../../presets/skin" as *;
-@use "../../mixins/mixins" as *;
 @use "../../mixins/mixins-media" as *;
 @use "../../mixins/extends" as *;
 
@@ -83,6 +82,4 @@
 			}
 		}
 	}
-
-
 }
