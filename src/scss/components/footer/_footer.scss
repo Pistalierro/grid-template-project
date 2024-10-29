@@ -1,0 +1,62 @@
+@use "../../presets/variables" as *;
+@use "../../presets/skin" as *;
+@use "../../mixins/mixins" as *;
+@use "../../mixins/mixins-media" as *;
+@use "../../mixins/extends" as *;
+
+.footer {
+	background-color: $color-primary;
+	padding: $gap-x3 0;
+	min-height: 250px;
+
+	&__container {
+		@extend %container;
+	}
+
+	&__socials {
+		display: flex;
+		gap: $gap;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: $gap-x2;
+		font-size: 2.25rem;
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -50%;
+			left: calc(50% - (#{$gap-x5} / 2));
+			width: $gap-x5;
+			height: 2px;
+			background-color: $color-gray-dark;
+		}
+	}
+
+	&__social-item {
+		transition: color 0.3s;
+
+		&:hover,
+		&:focus {
+			color: $color-accent;
+		}
+	}
+
+	&__copyright {
+		span {
+			display: block;
+			text-align: center;
+			font-size: 1.1rem;
+		}
+
+		&-first {
+			font-weight: 100;
+			letter-spacing: 0.2em;
+			color: $color-gray-light;
+		}
+
+		&-last {
+			color: $color-light;
+		}
+	}
+}
